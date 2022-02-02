@@ -1,0 +1,98 @@
+{
+    "info": {
+        "_postman_id": "4aceebde-ec53-4123-b50c-017fa3fae070",
+        "name": "Employee API Old",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "/Employees",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "0068b525-b5c3-43c4-a8a9-f4644fbbbfd2",
+                        "exec": [
+                            "pm.test(\"Status code is 200\",function(){\r",
+                            "    pm.response.to.have.status(200);\r",
+                            "});\r",
+                            "const response = pm.response.json();\r",
+                            "console.log(response);"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "id": "9e8d2165-f0b7-488f-a14f-e6d49ac0a14d",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/Employees",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "Employees"
+                    ]
+                }
+            },
+            "response": [
+                {
+                    "id": "b551b872-77c7-4525-97f5-c53d5d0a5691",
+                    "name": "Returns list of Employees",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/Employees",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "Employees"
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "text",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "text/plain"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": ""
+                }
+            ]
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "id": "fdd46a3e-237c-4a3d-9cea-9bf843b49c55",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "id": "53ae3dc7-cd1a-4261-8ffd-e5c92f528cfa",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ]
+}

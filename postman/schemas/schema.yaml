@@ -1,0 +1,20 @@
+openapi: 3.0.2
+info:
+  version: 1.0.0
+  title: Employee API
+
+
+
+
+paths:
+  /Employees:
+    get:
+     
+      responses:
+        '200':
+          description: Returns list of Employees
+
+
+  
+      
+      
