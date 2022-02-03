@@ -1,7 +1,7 @@
 {
     "info": {
-        "_postman_id": "4aceebde-ec53-4123-b50c-017fa3fae070",
-        "name": "Employee API Old",
+        "_postman_id": "351cfd3c-e926-4240-8bcc-1deff4555a4b",
+        "name": "Employee API",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
     "item": [
@@ -23,7 +23,7 @@
                     }
                 }
             ],
-            "id": "9e8d2165-f0b7-488f-a14f-e6d49ac0a14d",
+            "id": "728bd5a8-1328-4d98-84d5-14d45904012a",
             "protocolProfileBehavior": {
                 "disableBodyPruning": true
             },
@@ -42,7 +42,7 @@
             },
             "response": [
                 {
-                    "id": "b551b872-77c7-4525-97f5-c53d5d0a5691",
+                    "id": "2f65deac-62f7-44a2-bde5-4faa5070e89f",
                     "name": "Returns list of Employees",
                     "originalRequest": {
                         "method": "GET",

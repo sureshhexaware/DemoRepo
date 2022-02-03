@@ -2,19 +2,126 @@ openapi: 3.0.2
 info:
   version: 1.0.0
   title: Employee API
+  description: A simple API to illustrate OpenAPI concepts
 
-
-
+servers:
+  - url: https://employee.com
+    description: Employee Server
+#security:
+ # -BasicAuth: []
 
 paths:
   /Employees:
     get:
-     
+      summary: Get all Employees
+      description: Returns list of all Employees
+      tags:
+        - Employee
       responses:
         '200':
           description: Returns list of Employees
-
-
-  
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeList' 
+        '400':
+          description: Error Employee list cannot be generated
+    post:
+      summary: Add Employee
+      tags:
+        - Employee
+      description: Add a new Employee
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '201':
+          description: Employee Added
+  /Employees/{EmpID}:
+    get:
+      summary: Search employee
+      description: Retutns employee details based on employee ID
+      tags:
+        - Employee
+      parameters:
+      - $ref: '#/components/parameters/EmployeeIDparam'
+      responses:
+        '200':
+          description: Emplooyee details found !!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+    put:
+      tags:
+        - Employee
+      summary: Update Employee
+      description: Employee updated using Employee ID
+      parameters:
+      - $ref: '#/components/parameters/EmployeeIDparam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Employee'
+      responses:
+        '202':
+          description: Employee details updated successfully
+    delete:
+      summary: Delete Employee
+      description: Delete employee by ID
+      tags:
+        - Employee
+      parameters:
+      - $ref: '#/components/parameters/EmployeeIDparam'
+      responses:
+        '200':
+          description: Employee deleted
+components:
+  schemas: 
+    Address:
+      type: object
+      properties:
+        line1:
+          type: string
+        city:
+          type: string
+        pinCode:
+          type: number
+    Employee: 
+      type: object
+      properties:
+        firstName:
+          type: string
+          minLength: 3
+          maxLength: 20
+        lastName:
+          type: string
+          minLength: 3
+          maxLength: 20
+        empID: 
+          type: number
+        department: 
+          type: string
+        emailID:
+          type: string
+        address:
+          $ref: '#/components/schemas/Address'
+    EmployeeList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Employee'
+  parameters:
+    EmployeeIDparam:
+      name: EmpID
+      in: path
+      description: Employee details will be found based on the employee ID
+      required: true
+      schema:
+        type: string
       
       
