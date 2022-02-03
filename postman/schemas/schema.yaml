@@ -1,7 +1,7 @@
 openapi: 3.0.2
 info:
   version: 1.0.0
-  title: Employee API
+  title: Employee API Get
   description: A simple API to illustrate OpenAPI concepts
 
 servers:
